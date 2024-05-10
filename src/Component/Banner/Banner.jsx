@@ -1,9 +1,10 @@
 import { BsArrowRight } from "react-icons/bs";
-
+import Lottie from "lottie-react";
+import bannerAnimation from "../../../src/banner animation.json";
 const Banner = () => {
   return (
-    <div className="md:flex mt-12 h-[500px]">
-      <div className="w-1/2 border border-red-400 pl-9">
+    <div className="md:flex border  mt-12 h-[500px] mb-12">
+      <div className="w-1/2 ml-28">
         <div className="flex gap-x-3 items-center">
           <h1 className="text-6xl font-sans font-semibold text-black">
             Find Your
@@ -53,8 +54,11 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="w-1/2 border border-green-400">
-        <h1>This is image</h1>
+      <div className="w-1/2">
+        <Lottie
+          className="h-[550px] w-[700px]"
+          animationData={bannerAnimation}
+        ></Lottie>
       </div>
     </div>
   );
