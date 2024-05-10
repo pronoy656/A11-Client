@@ -3,8 +3,8 @@ import Lottie from "lottie-react";
 import bannerAnimation from "../../../src/banner animation.json";
 const Banner = () => {
   return (
-    <div className="md:flex border  mt-12 h-[500px] mb-12">
-      <div className="w-1/2 ml-28">
+    <div className="md:flex  bg-[#F9F5EB]  mt-12 h-[500px] ">
+      <div className="w-1/2 ml-28 mt-5">
         <div className="flex gap-x-3 items-center">
           <h1 className="text-6xl font-sans font-semibold text-black">
             Find Your
