@@ -1,6 +1,9 @@
 const AddJob = () => {
   return (
     <div>
+      <h1 className="text-center text-pink-700 text-3xl font-bold mt-4">
+        Add Your Job
+      </h1>
       <form className="card-body">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="form-control">

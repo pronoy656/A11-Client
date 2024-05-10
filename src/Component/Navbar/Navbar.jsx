@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("synthwave");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
   const navLink = (
     <>
       <Link to={"/"}>
@@ -86,6 +105,7 @@ const Navbar = () => {
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
+            onChange={handleToggle}
             className="theme-controller"
             value="synthwave"
           />
