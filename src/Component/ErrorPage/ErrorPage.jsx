@@ -6,10 +6,13 @@ const ErrorPage = () => {
   return (
     <div>
       <div
-        className="text-xs
+        className="flex justify-center
      "
       >
-        <Lottie animationData={errorPage}></Lottie>
+        <Lottie
+          className="w-[550px] h-[550px]"
+          animationData={errorPage}
+        ></Lottie>
       </div>
       <div className="flex justify-center">
         <Link to={"/"}>
