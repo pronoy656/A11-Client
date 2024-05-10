@@ -58,7 +58,15 @@ const Navbar = () => {
             {navLink}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+
+        <img
+          className="w-20 h-18 rounded-full"
+          src="https://i.ibb.co/mt4SvMk/Black-Pink-Bold-Lifestyle-Blogger-Personal-Name-Logo.png"
+          alt=""
+        />
+        <a className="ml-2 font-medium text-3xl text-black">
+          Swipe <span className="text-pink-700">Career</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLink}</ul>

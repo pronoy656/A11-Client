@@ -1,8 +1,8 @@
 const Login = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/ZBzBjbh/top-view-desk-dark-concept-with-copy-space.jpg')] mb-11">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">
@@ -11,7 +11,7 @@ const Login = () => {
               et a id nisi.
             </p>
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-neutral-content">
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -41,7 +41,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn bg-black text-white">Login</button>
               </div>
             </form>
           </div>
