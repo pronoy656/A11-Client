@@ -15,9 +15,9 @@ const JobCard = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="w-[400px] h-[250px] border">
+      <div className="w-[380px] h-[300px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11">
         <div className="flex justify-between">
-          <img className="w-12 h-12 rounded-full" src={picture} alt="" />
+          <img className="w-14 h-14 rounded-full" src={picture} alt="" />
           <FaRegHeart />
         </div>
         <h1 className="text-2xl font-bold">Title:{subCategory}</h1>
@@ -28,10 +28,14 @@ const JobCard = ({ job }) => {
           </div>
         </div>
         <p className="btn btn-sm bg-slate-100 mt-3">{email}</p>
-        <div className="flex justify-between">
+        <div className="border border-b-1 border-black mt-7"></div>
+        <div className="flex justify-between mt-6">
           <div>
             <h1 className="text-xl font-bold">${salaryRange}</h1>
-            <h1>Deadline: {applicationDeadline}</h1>
+            <h1>
+              <span className="text-lg font-medium">Deadline:</span>{" "}
+              {applicationDeadline}
+            </h1>
           </div>
           <button className="btn bg-black text-white btn-sm">
             View Details
