@@ -18,6 +18,11 @@ const DetailsJob = () => {
     jobApplicantsNumber,
     jobDescription,
   } = jobDetails;
+
+  // const handleApply = () =>{
+
+  // }
+
   return (
     <div className="max-w-6xl mx-auto mb-16">
       <img className="h-[350px] w-full rounded-2xl" src={picture} alt="" />
@@ -61,9 +66,72 @@ const DetailsJob = () => {
             </h1>
           </div>
           <div>
-            <button className="btn bg-green-600 text-white w-full rounded-2xl mt-5">
+            {/* <button className="btn bg-green-600 text-white w-full rounded-2xl mt-5">
+              Apply Job
+            </button> */}
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button
+              className="btn bg-green-600 text-white w-full mt-5"
+              onClick={() => document.getElementById("my_modal_1").showModal()}
+            >
               Apply Job
             </button>
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg text-center mb-3">
+                  Apply Job
+                </h3>
+                <form>
+                  <div className="grid grid-cols-2 gap-x-2">
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Name</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">email</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="form-control mt-3">
+                    <label className="label">
+                      <span className="label-text">resume Link</span>
+                    </label>
+                    <input
+                      type="resume"
+                      name="resume"
+                      placeholder="Your resume link"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <button className="btn bg-green-600 text-white mt-5 w-full">
+                    Submit
+                  </button>
+                </form>
+
+                <div className="modal-action">
+                  <form method="dialog">
+                    <button className="btn bg-black text-white">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>

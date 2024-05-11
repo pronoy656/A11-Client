@@ -16,6 +16,7 @@ import Register from "./Component/Register/Register";
 import AuthProvider from "./Component/AuthProvider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import DetailsJob from "./Component/DetailsJob/DetailsJob";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/myJobs",
-        element: <MyJob></MyJob>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyJob></MyJob>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
