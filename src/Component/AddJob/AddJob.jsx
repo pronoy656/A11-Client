@@ -1,10 +1,64 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+
 const AddJob = () => {
+  const handleAddJob = (e) => {
+    e.preventDefault();
+    const picture = e.target.PictureURL.value;
+    const subCategory = e.target.subCategory.value;
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const category = e.target.category.value;
+    const salaryRange = e.target.salaryRange.value;
+    const JobPostingDate = e.target.JobPostingDate.value;
+    const applicationDeadline = e.target.applicationDeadline.value;
+    const jobApplicantsNumber = e.target.jobApplicantsNumber.value;
+    const jobDescription = e.target.jobDescription.value;
+
+    const allInputField = {
+      picture,
+      subCategory,
+      name,
+      email,
+      category,
+      salaryRange,
+      JobPostingDate,
+      applicationDeadline,
+      jobApplicantsNumber,
+      jobDescription,
+    };
+    console.log(allInputField);
+
+    // fetch
+    fetch("http://localhost:5000/allJobs", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(allInputField),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success",
+            text: "Job Add Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
+
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <h1 className="text-center text-pink-700 text-3xl font-bold mt-4">
         Add Your Job
       </h1>
-      <form className="card-body">
+      <form onSubmit={handleAddJob} className="card-body">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="form-control">
             <label className="label">
@@ -42,7 +96,8 @@ const AddJob = () => {
             <input
               type="text"
               name="name"
-              placeholder="Your name"
+              defaultValue={user?.displayName}
+              readOnly
               className="input input-bordered"
               required
             />
@@ -54,6 +109,8 @@ const AddJob = () => {
             <input
               type="email"
               name="email"
+              defaultValue={user?.email}
+              readOnly
               className="input input-bordered"
               required
             />
@@ -77,7 +134,7 @@ const AddJob = () => {
               <span className="label-text">Salary range</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="salaryRange"
               placeholder="Salary range"
               className="input input-bordered"
@@ -90,7 +147,7 @@ const AddJob = () => {
             </label>
             <input
               type="date"
-              name="Job Posting Date"
+              name="JobPostingDate"
               className="input input-bordered"
               required
             />
@@ -101,7 +158,7 @@ const AddJob = () => {
             </label>
             <input
               type="date"
-              name="Application Deadline"
+              name="applicationDeadline"
               className="input input-bordered"
               required
             />
@@ -113,16 +170,12 @@ const AddJob = () => {
             <input
               type="number"
               name="jobApplicantsNumber"
-              placeholder="Job Applicants Number"
+              defaultValue={0}
+              readOnly
               className="input input-bordered"
               required
             />
           </div>
-
-          {/* <textarea
-            className="textarea textarea-info w-full"
-            placeholder="Bio"
-          ></textarea> */}
         </div>
         <div className="form-control mt-4">
           <label className="label">
@@ -130,8 +183,8 @@ const AddJob = () => {
           </label>
           <textarea
             className="border"
-            placeholder="Job Description"
-            name=""
+            placeholder="JobDescription"
+            name="jobDescription"
             id=""
             cols="30"
             rows="10"
