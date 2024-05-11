@@ -15,7 +15,7 @@ const JobCard = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="w-[380px] h-[300px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11">
+      <div className="w-[380px] h-[330px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11">
         <div className="flex justify-between">
           <img className="w-14 h-14 rounded-full" src={picture} alt="" />
           <FaRegHeart />

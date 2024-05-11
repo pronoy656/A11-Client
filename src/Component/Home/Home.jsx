@@ -10,8 +10,8 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <UnderBanner></UnderBanner>
-      <h1>All Jobs{allJobs.length}</h1>
-      <div className="flex justify-center gap-x-8">
+
+      <div className="grid grid-cols-3 justify-center gap-x-12 max-w-6xl mx-auto">
         {allJobs.map((job) => (
           <JobCard key={job._id} job={job}></JobCard>
         ))}
