@@ -15,6 +15,7 @@ import Login from "./Component/Login/Login";
 import Register from "./Component/Register/Register";
 import AuthProvider from "./Component/AuthProvider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import DetailsJob from "./Component/DetailsJob/DetailsJob";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/details/:id",
+        element: <DetailsJob></DetailsJob>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allJobs/${params.id}`),
       },
     ],
   },

@@ -1,7 +1,9 @@
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
   const {
+    _id,
     picture,
     subCategory,
     name,
@@ -37,9 +39,12 @@ const JobCard = ({ job }) => {
               {applicationDeadline}
             </h1>
           </div>
-          <button className="btn bg-black text-white btn-sm">
-            View Details
-          </button>
+          <Link to={`/details/${_id}`}>
+            {" "}
+            <button className="btn bg-black text-white btn-sm">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
