@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, userLogout } = useContext(AuthContext);
@@ -24,7 +25,8 @@ const Navbar = () => {
 
   //user logout
   const handleLogout = () => {
-    userLogout().then().catch();
+    userLogout().then();
+    toast.success("Log Out Successfully").catch();
   };
 
   const navLink = (
@@ -98,7 +100,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <label className="swap swap-rotate mr-3">
+        <label className="swap swap-rotate ">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
@@ -126,14 +128,11 @@ const Navbar = () => {
           </svg>
         </label>
         {user ? (
-          <div className="navbar-end">
-            <div className="tooltip tooltip-bottom" data-tip="hello">
+          <div className="navbar-end flex">
+            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
               <div className="avatar mr-4">
                 <div className="w-12">
-                  <img
-                    className="rounded-full"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+                  <img className="rounded-full" src={user.photoURL} />
                 </div>
               </div>
             </div>

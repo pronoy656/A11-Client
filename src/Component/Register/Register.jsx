@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const { userCreate, updateProfile, user, setUser } = useContext(AuthContext);
+  const { userCreate, updateUserProfile, user, setUer } =
+    useContext(AuthContext);
+
+  // success Message
+  const [success, setSuccess] = useState("");
+  // Error Message
+  const [error, setError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -12,18 +19,33 @@ const Register = () => {
     const password = e.target.password.value;
     console.log(name, photo, email, password);
 
+    // success and error msg clear
+    setSuccess("");
+    setError("");
+
+    // password validation
+    if (password.length < 6) {
+      setError("Password Should be at least 6 characters");
+      toast.error("Password Should be at least 6 characters");
+      return;
+    }
+
     userCreate(email, password)
       .then((createUser) => {
         const user = createUser.user;
         console.log(user);
-        updateProfile(name, photo).then(() => {
-          setUser({ displayName: name, photoURL: photo });
+        updateUserProfile(name, photo).then(() => {
+          setUer({ displayName: name, photoURL: photo });
         });
+        setSuccess("Account Created Successfully");
+        toast.success("SignUp Successfully");
       })
       .catch((error) => {
         const errorMessage = error.message;
         const errorCode = error.code;
         console.log(errorMessage, errorCode);
+        setError("Already have this Account");
+        toast.error("Already Have this Account");
       });
   };
 
@@ -89,8 +111,14 @@ const Register = () => {
                   required
                 />
               </div>
+              {success && (
+                <p className="font-medium mt-3 text-green-500">{success}</p>
+              )}
+              {error && (
+                <p className="font-medium mt-3 text-red-600">{error}</p>
+              )}
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">Sign up</button>
               </div>
             </form>
           </div>

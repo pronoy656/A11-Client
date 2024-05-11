@@ -14,6 +14,7 @@ import MyJob from "./Component/MyJob/MyJob";
 import Login from "./Component/Login/Login";
 import Register from "./Component/Register/Register";
 import AuthProvider from "./Component/AuthProvider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -58,5 +59,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    <Toaster />
   </React.StrictMode>
 );

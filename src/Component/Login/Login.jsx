@@ -1,8 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle } = useContext(AuthContext);
+
+  // success message
+  const [success, setSuccess] = useState("");
+  // error message
+  const [error, setError] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -10,9 +16,31 @@ const Login = () => {
     const password = e.target.password.value;
     console.log(email, password);
 
+    // success and errorMessage clear
+    setSuccess("");
+    setError("");
+
     userLogin(email, password)
       .then((loginUser) => {
         console.log(loginUser.user);
+        setSuccess("Sign in successFully");
+        toast.success("Sign in SuccessFully");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        const errorCode = error.code;
+        console.log(errorMessage, errorCode);
+        setError("Wrong Password");
+      });
+  };
+
+  // Google SignIn
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then((googleUser) => {
+        const userGoogle = googleUser.user;
+        console.log(userGoogle);
+        toast.success("SignUp SuccessFully ");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -78,7 +106,10 @@ const Login = () => {
                 type="password"
               />
             </div>
-
+            {success && (
+              <p className="font-medium mt-3 text-green-500">{success}</p>
+            )}
+            {error && <p className="font-medium mt-3 text-red-600">{error}</p>}
             <div className="mt-6">
               <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-black rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
                 Sign In
@@ -97,6 +128,7 @@ const Login = () => {
               <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
             </div>
             <a
+              onClick={handleSignInWithGoogle}
               href="#"
               className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
