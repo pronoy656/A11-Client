@@ -1,5 +1,6 @@
 import { FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const Table = ({ job }) => {
   const {
@@ -15,6 +16,37 @@ const Table = ({ job }) => {
     jobApplicantsNumber,
     jobDescription,
   } = job;
+
+  // delete operation
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete this job?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allJobs/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your job has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
   return (
     <tr>
       <th>
@@ -45,7 +77,10 @@ const Table = ({ job }) => {
         <button className="btn bg-green-400 btn-md">
           <FaPen />
         </button>
-        <button className="btn bg-red-400 btn-md">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn bg-red-400 btn-md"
+        >
           <MdDelete />
         </button>
       </th>
