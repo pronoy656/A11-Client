@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import UnderBanner from "../UnderBanner/UnderBanner";
 import JobCard from "../JobCard/JobCard";
 import ClientCard from "../ClientCard/ClientCard";
+import Extra from "../Extra/Extra";
 
 const Home = () => {
   const allJobs = useLoaderData();
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <UnderBanner></UnderBanner>
+      <Extra></Extra>
       <div className="text-center mb-14 mt-8">
         <h1 className="text-center mt-10 text-3xl font-bold">
           New Jobs For Apply
