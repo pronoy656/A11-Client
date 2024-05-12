@@ -4,6 +4,7 @@ import UnderBanner from "../UnderBanner/UnderBanner";
 import JobCard from "../JobCard/JobCard";
 import ClientCard from "../ClientCard/ClientCard";
 import Extra from "../Extra/Extra";
+import ClientReview from "../ClientReview/ClientReview";
 
 const Home = () => {
   const allJobs = useLoaderData();
@@ -25,6 +26,7 @@ const Home = () => {
         ))}
       </div>
       <ClientCard></ClientCard>
+      <ClientReview></ClientReview>
     </div>
   );
 };
