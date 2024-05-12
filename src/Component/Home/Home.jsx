@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import UnderBanner from "../UnderBanner/UnderBanner";
 import JobCard from "../JobCard/JobCard";
+import ClientCard from "../ClientCard/ClientCard";
 
 const Home = () => {
   const allJobs = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
           <JobCard key={job._id} job={job}></JobCard>
         ))}
       </div>
+      <ClientCard></ClientCard>
     </div>
   );
 };
