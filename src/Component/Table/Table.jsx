@@ -1,3 +1,6 @@
+import { FaPen } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+
 const Table = ({ job }) => {
   const {
     _id,
@@ -39,8 +42,12 @@ const Table = ({ job }) => {
       <td>{applicationDeadline}</td>
       <td>$ {salaryRange}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">Update</button>
-        <button className="btn btn-ghost btn-xs">delete</button>
+        <button className="btn bg-green-400 btn-md">
+          <FaPen />
+        </button>
+        <button className="btn bg-red-400 btn-md">
+          <MdDelete />
+        </button>
       </th>
     </tr>
   );
