@@ -17,6 +17,7 @@ import AuthProvider from "./Component/AuthProvider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import DetailsJob from "./Component/DetailsJob/DetailsJob";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import UpdateJob from "./Component/UpdateJob/UpdateJob";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,12 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <DetailsJob></DetailsJob>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allJobs/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateJob></UpdateJob>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allJobs/${params.id}`),
       },

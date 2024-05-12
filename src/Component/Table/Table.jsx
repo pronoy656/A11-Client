@@ -1,5 +1,6 @@
 import { FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Table = ({ job }) => {
@@ -74,9 +75,12 @@ const Table = ({ job }) => {
       <td>{applicationDeadline}</td>
       <td>$ {salaryRange}</td>
       <th>
-        <button className="btn bg-green-400 btn-md">
-          <FaPen />
-        </button>
+        <Link to={`/update/${_id}`}>
+          {" "}
+          <button className="btn bg-green-400 btn-md">
+            <FaPen />
+          </button>
+        </Link>
         <button
           onClick={() => handleDelete(_id)}
           className="btn bg-red-400 btn-md"
