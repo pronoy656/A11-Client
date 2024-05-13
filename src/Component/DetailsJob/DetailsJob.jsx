@@ -81,6 +81,7 @@ const DetailsJob = () => {
                 <h3 className="font-bold text-lg text-center mb-3">
                   Apply Job
                 </h3>
+                <h3 className="font-bold text-lg  mb-3">{subCategory}</h3>
                 <form>
                   <div className="grid grid-cols-2 gap-x-2">
                     <div className="form-control">

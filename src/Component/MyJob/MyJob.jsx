@@ -7,12 +7,14 @@ const MyJob = () => {
   const { user } = useContext(AuthContext);
   const [jobs, setJobs] = useState([]);
 
-  const url = `http://localhost:5000/myJobs?email=${user.email}`;
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setJobs(data));
-  }, []);
+    if (user?.email) {
+      const url = `http://localhost:5000/myJobs?email=${user.email}`;
+      fetch(url, { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => setJobs(data));
+    }
+  }, [user?.email]);
 
   // delete operation
   const handleDelete = (_id) => {

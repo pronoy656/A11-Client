@@ -1,9 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { userLogin, signInWithGoogle } = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
 
   // success message
   const [success, setSuccess] = useState("");
@@ -23,8 +28,10 @@ const Login = () => {
     userLogin(email, password)
       .then((loginUser) => {
         console.log(loginUser.user);
+        navigate(location?.state ? location?.state : "/");
         setSuccess("Sign in successFully");
         toast.success("Sign in SuccessFully");
+        navigate(location?.state ? location?.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -41,6 +48,7 @@ const Login = () => {
         const userGoogle = googleUser.user;
         console.log(userGoogle);
         toast.success("SignUp SuccessFully ");
+        navigate(location?.state ? location?.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
