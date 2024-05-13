@@ -2,8 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaFilePen } from "react-icons/fa6";
 import { BsClockFill } from "react-icons/bs";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const DetailsJob = () => {
+  const { user } = useContext(AuthContext);
   const jobDetails = useLoaderData();
   const {
     _id,
@@ -22,6 +26,32 @@ const DetailsJob = () => {
   // const handleApply = () =>{
 
   // }
+
+  // apply job
+  const handleApply = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const resume = e.target.resume.value;
+    const inputField = { name, email, resume };
+    console.log(inputField);
+
+    // fetch
+    fetch("http://localhost:5000/applyJobs", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(inputField),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          toast.success("apply Successfully");
+        }
+      });
+  };
 
   return (
     <div className="max-w-6xl mx-auto mb-16">
@@ -71,7 +101,8 @@ const DetailsJob = () => {
             </button> */}
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="btn bg-green-600 text-white w-full mt-5"
+              disabled={email === user?.email}
+              className="btn disabled:cursor-not-allowed bg-green-600 text-white w-full mt-5"
               onClick={() => document.getElementById("my_modal_1").showModal()}
             >
               Apply Job
@@ -82,7 +113,7 @@ const DetailsJob = () => {
                   Apply Job
                 </h3>
                 <h3 className="font-bold text-lg  mb-3">{subCategory}</h3>
-                <form>
+                <form onSubmit={handleApply}>
                   <div className="grid grid-cols-2 gap-x-2">
                     <div className="form-control">
                       <label className="label">
@@ -91,7 +122,8 @@ const DetailsJob = () => {
                       <input
                         type="text"
                         name="name"
-                        placeholder="Your Name"
+                        readOnly
+                        defaultValue={user?.displayName}
                         className="input input-bordered"
                         required
                       />
@@ -103,7 +135,8 @@ const DetailsJob = () => {
                       <input
                         type="email"
                         name="email"
-                        placeholder="Your email"
+                        defaultValue={user?.email}
+                        readOnly
                         className="input input-bordered"
                         required
                       />
