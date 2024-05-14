@@ -18,36 +18,6 @@ const Table = ({ job, handleDelete }) => {
     jobDescription,
   } = job;
 
-  // // delete operation
-  // const handleDelete = (_id) => {
-  //   console.log(_id);
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You want to delete this job?",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       fetch(`http://localhost:5000/allJobs/${_id}`, {
-  //         method: "DELETE",
-  //       })
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           console.log(data);
-  //           if (data.deletedCount > 0) {
-  //             Swal.fire({
-  //               title: "Deleted!",
-  //               text: "Your job has been deleted.",
-  //               icon: "success",
-  //             });
-  //           }
-  //         });
-  //     }
-  //   });
-  // };
   return (
     <tr>
       <th>

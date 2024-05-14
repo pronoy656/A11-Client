@@ -56,7 +56,7 @@ const Banner = () => {
 
       <div className="w-1/2">
         <Lottie
-          className="h-[550px] w-[700px]"
+          className="md:h-[550px] md:w-[700px]"
           animationData={bannerAnimation}
         ></Lottie>
       </div>

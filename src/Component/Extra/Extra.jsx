@@ -4,7 +4,7 @@ const Extra = () => {
       <h1 className="text-center  mt-10 mb-10 text-3xl font-bold">
         Trusted by the worlds biggest Business
       </h1>
-      <div className="flex justify-center gap-x-10 mt-8">
+      <div className="flex  justify-center gap-x-10 mt-8">
         <img
           className="w-28 h-14"
           src="https://i.ibb.co/RyFTZ9F/Adobe-logo.png"

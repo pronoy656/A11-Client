@@ -67,8 +67,6 @@ const MyJob = () => {
               <th>Category</th>
               <th>Application Deadline</th>
               <th>Salary Range</th>
-              {/* <th>Update</th>
-              <th>Delete</th> */}
             </tr>
           </thead>
           <tbody>

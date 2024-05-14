@@ -7,7 +7,7 @@ const ClientCard = () => {
         Meet Our Honorable <br /> Clients
       </h1>
       <Marquee pauseOnHover={true} autoFill>
-        <div className="mb-16 flex space-x-7">
+        <div className="mb-16  flex  space-x-7">
           <div className="relative">
             <img
               className="w-[300px] h-[300px] rounded-3xl border "
