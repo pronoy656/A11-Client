@@ -18,6 +18,7 @@ import toast, { Toaster } from "react-hot-toast";
 import DetailsJob from "./Component/DetailsJob/DetailsJob";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import UpdateJob from "./Component/UpdateJob/UpdateJob";
+import Blogs from "./Component/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
         element: <UpdateJob></UpdateJob>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allJobs/${params.id}`),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },
