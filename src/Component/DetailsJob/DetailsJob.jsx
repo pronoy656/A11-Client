@@ -33,7 +33,12 @@ const DetailsJob = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const resume = e.target.resume.value;
-    const inputField = { name, email, resume };
+    const title = e.target.title.value;
+    const photo = e.target.photo.value;
+    const date = e.target.date.value;
+    const category = e.target.category.value;
+
+    const inputField = { name, email, resume, title, photo, date, category };
     console.log(inputField);
 
     // fetch
@@ -117,6 +122,19 @@ const DetailsJob = () => {
                   <div className="grid grid-cols-2 gap-x-2">
                     <div className="form-control">
                       <label className="label">
+                        <span className="label-text">Job Name</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="title"
+                        defaultValue={subCategory}
+                        readOnly
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
                         <span className="label-text">Name</span>
                       </label>
                       <input
@@ -136,6 +154,45 @@ const DetailsJob = () => {
                         type="email"
                         name="email"
                         defaultValue={user?.email}
+                        readOnly
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Photo Url</span>
+                      </label>
+                      <input
+                        type="photo"
+                        name="photo"
+                        defaultValue={picture}
+                        readOnly
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Application Deadline</span>
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        defaultValue={applicationDeadline}
+                        readOnly
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Category</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="category"
+                        defaultValue={category}
                         readOnly
                         className="input input-bordered"
                         required
