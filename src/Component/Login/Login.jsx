@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import registerAnimation from "../../../src/Animation - 1715664801480.json";
 
 const Login = () => {
   const { userLogin, signInWithGoogle } = useContext(AuthContext);
@@ -60,12 +62,9 @@ const Login = () => {
   return (
     <div className="mt-4 bg-[url('https://i.ibb.co/4V0vH1r/high-angle-desktop-with-laptop-copy-space.jpg')] h-[700px] mb-20">
       <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-transparent rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl mb-11">
-        <div
-          className="hidden bg-cover lg:block lg:w-1/2"
-          style={{
-            backgroundImage: "url('https://i.ibb.co/sbgvY2R/4707071.jpg')",
-          }}
-        ></div>
+        <div className="hidden bg-cover lg:block lg:w-1/2">
+          <Lottie animationData={registerAnimation}></Lottie>
+        </div>
 
         <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
           <div className="flex justify-center mx-auto">

@@ -56,10 +56,11 @@ const Register = () => {
     <div>
       <div className="hero min-h-screen bg-[url('https://i.ibb.co/tq34JW5/flat-lay-clean-office-desk.jpg')] mb-10 mt-11">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center   lg:text-left mr-8">
-            <Lottie animationData={registerAnimation}></Lottie>
-          </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="text-center   lg:text-left mr-8"></div>
+          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 md:ml-96">
+            <h1 className="text-center text-2xl font-bold mt-2">
+              Signup Here..
+            </h1>
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
