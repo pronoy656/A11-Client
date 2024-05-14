@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { userLogin, signInWithGoogle } = useContext(AuthContext);
@@ -58,13 +58,12 @@ const Login = () => {
   };
 
   return (
-    <>
-      <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl mb-11">
+    <div className="mt-4 bg-[url('https://i.ibb.co/4V0vH1r/high-angle-desktop-with-laptop-copy-space.jpg')] h-[700px] mb-20">
+      <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-transparent rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl mb-11">
         <div
           className="hidden bg-cover lg:block lg:w-1/2"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')",
+            backgroundImage: "url('https://i.ibb.co/sbgvY2R/4707071.jpg')",
           }}
         ></div>
 
@@ -77,14 +76,12 @@ const Login = () => {
             />
           </div>
 
-          <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-            Welcome back!
-          </p>
+          <p className="mt-3 text-xl text-center text-white">Welcome back!</p>
 
           <form onSubmit={handleLogin}>
             <div className="mt-4">
               <label
-                className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                className="block mb-2 text-sm font-medium  text-white"
                 htmlFor="LoggingEmailAddress"
               >
                 Email Address
@@ -100,7 +97,7 @@ const Login = () => {
             <div className="mt-4">
               <div className="flex justify-between">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                  className="block mb-2 text-sm font-medium text-white"
                   htmlFor="loggingPassword"
                 >
                   Password
@@ -128,7 +125,7 @@ const Login = () => {
 
               <a
                 href="#"
-                className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                className="text-xs text-center text-white hover:underline"
               >
                 or login with email
               </a>
@@ -161,7 +158,7 @@ const Login = () => {
                 </svg>
               </div>
 
-              <span className="w-5/6 px-4 py-3 font-bold text-center">
+              <span className="w-5/6 px-4 py-3 font-bold text-center text-white">
                 Sign in with Google
               </span>
             </a>
@@ -169,18 +166,21 @@ const Login = () => {
           <div className="flex items-center justify-between mt-4">
             <span className="w-1/5 border-2 dark:border-black md:w-1/4"></span>
 
-            <a
-              href="#"
-              className="text-base text-black uppercase dark:text-gray-400 hover:underline"
-            >
-              or sign up
-            </a>
+            <Link to={"/register"}>
+              {" "}
+              <a
+                href="#"
+                className="text-base text-white uppercase  hover:underline"
+              >
+                or sign up
+              </a>
+            </Link>
 
             <span className="w-1/5 border-2 dark:border-gray-600 md:w-1/4"></span>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
