@@ -54,9 +54,9 @@ const Register = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200 mb-10 mt-11">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/tq34JW5/flat-lay-clean-office-desk.jpg')] mb-10 mt-11">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center lg:text-left mr-8">
+          <div className="text-center   lg:text-left mr-8">
             <Lottie animationData={registerAnimation}></Lottie>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -116,7 +116,7 @@ const Register = () => {
                 <p className="font-medium mt-3 text-red-600">{error}</p>
               )}
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Sign up</button>
+                <button className="btn bg-black text-white">Sign up</button>
               </div>
               <h1>
                 Already have an Acount? please{" "}
