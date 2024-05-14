@@ -5,8 +5,7 @@ const AllJobs = () => {
   const allApplyJob = useLoaderData();
 
   return (
-    <div>
-      <h1>This is all jobs page: {allApplyJob.length}</h1>
+    <div className="grid grid-cols-3 max-w-7xl mx-auto gap-x-8 mb-12">
       {allApplyJob.map((apply) => (
         <AllJobsCard key={apply._id} apply={apply}></AllJobsCard>
       ))}

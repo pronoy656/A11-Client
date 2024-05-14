@@ -37,8 +37,18 @@ const DetailsJob = () => {
     const photo = e.target.photo.value;
     const date = e.target.date.value;
     const category = e.target.category.value;
+    const salary = e.target.salary.value;
 
-    const inputField = { name, email, resume, title, photo, date, category };
+    const inputField = {
+      name,
+      email,
+      resume,
+      title,
+      photo,
+      date,
+      category,
+      salary,
+    };
     console.log(inputField);
 
     // fetch
@@ -193,6 +203,19 @@ const DetailsJob = () => {
                         type="text"
                         name="category"
                         defaultValue={category}
+                        readOnly
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Salary Range</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="salary"
+                        defaultValue={salaryRange}
                         readOnly
                         className="input input-bordered"
                         required
