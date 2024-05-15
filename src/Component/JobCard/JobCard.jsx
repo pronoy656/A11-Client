@@ -1,5 +1,7 @@
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../varient";
 
 const JobCard = ({ job }) => {
   const {
@@ -17,7 +19,13 @@ const JobCard = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="w-[380px] h-[330px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11">
+      <motion.div
+        variants={fadeIn("left", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="w-[380px] h-[330px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11 mt-11"
+      >
         <div className="flex justify-between">
           <img className="w-14 h-14 rounded-full" src={picture} alt="" />
           <FaRegHeart />
@@ -46,7 +54,7 @@ const JobCard = ({ job }) => {
             </button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

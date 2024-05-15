@@ -1,16 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../varient";
 
 const ClientReview = () => {
   return (
     <div className="mt-11">
-      <h1 className="text-center text-3xl font-bold">
-        We are work with largest company
-      </h1>
-      <h1 className="text-center text-3xl font-bold">Around the World</h1>
-      <h1 className="text-center text-lg font-medium mt-4">
-        Here are some of their words
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto mt-10 mb-16">
+      <motion.div
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+      >
+        <h1 className="text-center text-3xl font-bold">
+          We are work with largest company
+        </h1>
+        <h1 className="text-center text-3xl font-bold">Around the World</h1>
+        <h1 className="text-center text-lg font-medium mt-4">
+          Here are some of their words
+        </h1>
+      </motion.div>
+      <motion.div
+        variants={fadeIn("right", 0.5)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto mt-10 mb-16"
+      >
         <div className="border w-[370px] h-[370px] p-4">
           <img
             className="w-16 h-16 rounded-full"
@@ -152,7 +167,7 @@ const ClientReview = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -9,6 +9,9 @@ import ClientReview from "../ClientReview/ClientReview";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../../varient";
+
 const Home = () => {
   const allJobs = useLoaderData();
 
@@ -17,12 +20,18 @@ const Home = () => {
       <Banner></Banner>
       <UnderBanner></UnderBanner>
       <Extra></Extra>
-      <div className="text-center mb-14 mt-8">
+      <motion.div
+        variants={fadeIn("right", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="text-center mb-14 mt-8"
+      >
         <h1 className="text-center mt-10 text-3xl font-bold">
           New Jobs For Apply
         </h1>
         <h1 className="mt-2 font-medium">100+ jobs Uploaded Per Day</h1>
-      </div>
+      </motion.div>
       {/*  */}
       <Tabs>
         <div className="max-w-6xl mx-auto">
