@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const AppliedCard = ({ card }) => {
   const { _id, photo, title, name, email, date, category, resume, salary } =
     card;
@@ -25,9 +23,6 @@ const AppliedCard = ({ card }) => {
           {" "}
           <span className="text-lg font-medium">Resume link:</span> {resume}
         </h1>
-        {/* <div className="flex justify-end">
-          <button className="btn bg-black text-white">View Details</button>
-        </div> */}
       </div>
     </div>
   );

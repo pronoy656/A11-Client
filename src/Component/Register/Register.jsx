@@ -20,7 +20,7 @@ const Register = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photo, email, password);
+    // console.log(name, photo, email, password);
 
     // success and error msg clear
     setSuccess("");
@@ -36,7 +36,7 @@ const Register = () => {
     userCreate(email, password)
       .then((createUser) => {
         const user = createUser.user;
-        console.log(user);
+        // console.log(user);
         updateUserProfile(name, photo).then(() => {
           setUer({ displayName: name, photoURL: photo });
         });
@@ -46,7 +46,7 @@ const Register = () => {
       .catch((error) => {
         const errorMessage = error.message;
         const errorCode = error.code;
-        console.log(errorMessage, errorCode);
+        // console.log(errorMessage, errorCode);
         setError("Already have this Account");
         toast.error("Already Have this Account");
       });
