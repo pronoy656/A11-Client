@@ -8,7 +8,7 @@ const UpdateJob = () => {
   const { subCategory } = job;
   const { _id, user } = useContext(AuthContext);
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   const handleUpdateJob = (e) => {
     e.preventDefault();
     const picture = e.target.PictureURL.value;
@@ -35,9 +35,9 @@ const UpdateJob = () => {
       jobApplicantsNumber,
       jobDescription,
     };
-    console.log(allInputField);
-    console.log("id", _id);
-    fetch(`http://localhost:5000/allJobs/${id}`, {
+    // console.log(allInputField);
+    // console.log("id", _id);
+    fetch(`https://assignment-11-server-site-beta.vercel.app/allJobs/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -46,7 +46,7 @@ const UpdateJob = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success",

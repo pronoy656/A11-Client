@@ -5,7 +5,7 @@ import AppliedCard from "../AppliedCard/AppliedCard";
 const AppliedJobs = () => {
   const { user } = useContext(AuthContext);
   const [appJobs, setAppJobs] = useState([]);
-  const url = `http://localhost:5000/applyJob?email=${user?.email}`;
+  const url = `https://assignment-11-server-site-beta.vercel.app/applyJob?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

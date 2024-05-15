@@ -28,10 +28,10 @@ const AddJob = () => {
       jobApplicantsNumber,
       jobDescription,
     };
-    console.log(allInputField);
+    // console.log(allInputField);
 
     // fetch
-    fetch("http://localhost:5000/allJobs", {
+    fetch("https://assignment-11-server-site-beta.vercel.app/allJobs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,7 +40,7 @@ const AddJob = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success",

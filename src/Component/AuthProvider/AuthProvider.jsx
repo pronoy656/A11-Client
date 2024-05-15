@@ -61,25 +61,33 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = { email: userEmail };
-      console.log(currentUser);
+      // console.log(currentUser);
       setUer(currentUser);
       setLoading(false);
       // if user exist
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            "https://assignment-11-server-site-beta.vercel.app/jwt",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
-            console.log("token response", res.data);
+            // console.log("token response", res.data);
           });
       } else {
         axios
-          .post("http://localhost:5000/logout", loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            "https://assignment-11-server-site-beta.vercel.app/logout",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
           });
       }
     });

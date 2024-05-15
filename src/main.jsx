@@ -30,12 +30,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/allJobs"),
+        loader: () =>
+          fetch("https://assignment-11-server-site-beta.vercel.app/allJobs"),
       },
       {
         path: "/allJobs",
         element: <AllJobs></AllJobs>,
-        loader: () => fetch("http://localhost:5000/applyJobs"),
+        loader: () =>
+          fetch("https://assignment-11-server-site-beta.vercel.app/applyJobs"),
       },
       {
         path: "/appliedJobs",
@@ -78,13 +80,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allJobs/${params.id}`),
+          fetch(
+            `https://assignment-11-server-site-beta.vercel.app/allJobs/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdateJob></UpdateJob>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allJobs/${params.id}`),
+          fetch(
+            `https://assignment-11-server-site-beta.vercel.app/allJobs/${params.id}`
+          ),
       },
       {
         path: "/blogs",
@@ -98,7 +104,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/applyJobs/${params.id}`),
+          fetch(
+            `https://assignment-11-server-site-beta.vercel.app/applyJobs/${params.id}`
+          ),
       },
     ],
   },

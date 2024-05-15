@@ -45,10 +45,10 @@ const DetailsJob = () => {
       category,
       salary,
     };
-    console.log(inputField);
+    // console.log(inputField);
 
     // fetch
-    fetch("http://localhost:5000/applyJobs", {
+    fetch("https://assignment-11-server-site-beta.vercel.app/applyJobs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -57,7 +57,7 @@ const DetailsJob = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           toast.success("apply Successfully");
         }

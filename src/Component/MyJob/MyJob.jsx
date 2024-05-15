@@ -9,7 +9,7 @@ const MyJob = () => {
 
   useEffect(() => {
     if (user?.email) {
-      const url = `http://localhost:5000/myJobs?email=${user.email}`;
+      const url = `https://assignment-11-server-site-beta.vercel.app/myJobs?email=${user.email}`;
       fetch(url, { credentials: "include" })
         .then((res) => res.json())
         .then((data) => setJobs(data));
@@ -18,7 +18,7 @@ const MyJob = () => {
 
   // delete operation
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this job?",
@@ -29,12 +29,15 @@ const MyJob = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allJobs/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-11-server-site-beta.vercel.app/allJobs/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
