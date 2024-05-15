@@ -9,7 +9,7 @@ const MyJob = () => {
 
   useEffect(() => {
     if (user?.email) {
-      const url = `https://assignment-11-server-site-beta.vercel.app/myJobs?email=${user.email}`;
+      const url = `https://assignment-11-server-site-beta.vercel.app/myJobs?email=${user?.email}`;
       fetch(url, { credentials: "include" })
         .then((res) => res.json())
         .then((data) => setJobs(data));
@@ -54,7 +54,7 @@ const MyJob = () => {
 
   return (
     <div>
-      <h1>This is my job page</h1>
+      <h1 className="text-center text-4xl font-semibold mt-7 mb-7"> my job </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
