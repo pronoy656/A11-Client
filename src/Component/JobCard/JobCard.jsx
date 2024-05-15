@@ -24,7 +24,7 @@ const JobCard = ({ job }) => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
-        className="w-[380px] h-[330px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11 mt-11"
+        className="w-[380px] h-[330px] border bg-base-100 shadow-lg rounded-2xl p-4 mb-11 mt-11 transform hover:scale-105 hover: transition duration-500"
       >
         <div className="flex justify-between">
           <img className="w-14 h-14 rounded-full" src={picture} alt="" />
@@ -32,12 +32,12 @@ const JobCard = ({ job }) => {
         </div>
         <h1 className="text-2xl font-bold">Title:{subCategory}</h1>
         <div className="flex gap-x-4 mt-3">
-          <div className="btn btn-sm bg-slate-100">{category}</div>
-          <div className="btn btn-sm bg-slate-100">
+          <div className="btn btn-sm bg-slate-100 text-black">{category}</div>
+          <div className="btn btn-sm bg-slate-100 text-black">
             Apply : {jobApplicantsNumber}
           </div>
         </div>
-        <p className="btn btn-sm bg-slate-100 mt-3">{email}</p>
+        <p className="btn btn-sm bg-slate-100 mt-3 text-black">{email}</p>
         <div className="border border-b-1 border-black mt-7"></div>
         <div className="flex justify-between mt-6">
           <div>

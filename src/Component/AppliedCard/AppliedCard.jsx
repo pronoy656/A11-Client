@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 const AppliedCard = ({ card }) => {
-  const { photo, title, name, email, date, category, resume, salary } = card;
+  const { _id, photo, title, name, email, date, category, resume, salary } =
+    card;
   return (
-    <div>
+    <div className="mb-11 mt-10">
       <div className="md:w-[450px] border space-y-5 p-3">
         <img className="w-[450px] h-[200px] rounded-2xl" src={photo} alt="" />
         <h1 className="text-2xl font-bold">Title: {title}</h1>
@@ -22,9 +25,9 @@ const AppliedCard = ({ card }) => {
           {" "}
           <span className="text-lg font-medium">Resume link:</span> {resume}
         </h1>
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <button className="btn bg-black text-white">View Details</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

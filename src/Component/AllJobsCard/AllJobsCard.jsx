@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const AllJobsCard = ({ apply }) => {
-  const { photo, title, name, email, date, category, resume, salary } = apply;
+  const { _id, photo, title, name, email, date, category, resume, salary } =
+    apply;
   return (
     <div className="mb-11">
       <tr>
@@ -30,7 +33,10 @@ const AllJobsCard = ({ apply }) => {
         <td className="w-1/6">{salary}</td>
         <td className="w-1/6">{date}</td>
         <th className="w-1/6">
-          <button className="btn btn-ghost btn-xs">details</button>
+          <Link to={`/applyDetails/${_id}`}>
+            {" "}
+            <button className="btn btn-ghost btn-md">details</button>
+          </Link>
         </th>
       </tr>
     </div>

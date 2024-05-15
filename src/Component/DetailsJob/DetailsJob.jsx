@@ -23,10 +23,6 @@ const DetailsJob = () => {
     jobDescription,
   } = jobDetails;
 
-  // const handleApply = () =>{
-
-  // }
-
   // apply job
   const handleApply = (e) => {
     e.preventDefault();
