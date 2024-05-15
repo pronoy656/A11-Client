@@ -2,7 +2,7 @@ const AppliedCard = ({ card }) => {
   const { photo, title, name, email, date, category, resume, salary } = card;
   return (
     <div>
-      <div className="w-[450px] border space-y-5 p-3">
+      <div className="md:w-[450px] border space-y-5 p-3">
         <img className="w-[450px] h-[200px] rounded-2xl" src={photo} alt="" />
         <h1 className="text-2xl font-bold">Title: {title}</h1>
         <div className="flex justify-between">

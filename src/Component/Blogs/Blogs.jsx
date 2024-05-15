@@ -6,15 +6,15 @@ const Blogs = () => {
       <h1 className="text-center mt-4 text-3xl font-semibold">
         Your Question goes here ?
       </h1>
-      <div className="flex mt-6 mb-20">
-        <div className="flex justify-center w-1/2">
+      <div className="md:flex mt-6 mb-20">
+        <div className="flex justify-center md:w-1/2">
           <img
-            className="w-[700px] h-[450px]"
+            className="md:w-[700px] h-[450px]"
             src="https://i.ibb.co/WBdnfsm/80-c-G9sa-WNl-X3dvcmst-MDM.jpg"
             alt=""
           />
         </div>
-        <div className="w-1/2 border">
+        <div className="md:w-1/2 border">
           <h1 className="  text-3xl font-semibold">
             What is an access token and refresh token?
           </h1>

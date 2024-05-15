@@ -24,9 +24,9 @@ const ClientReview = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
-        className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto mt-10 mb-16"
+        className="grid grid-cols-1 md:grid-cols-3 md:max-w-7xl md:mx-auto mt-10 mb-16"
       >
-        <div className="border w-[370px] h-[370px] p-4">
+        <div className="border md:w-[370px] md:h-[370px] p-4">
           <img
             className="w-16 h-16 rounded-full"
             src="https://i.ibb.co/54bs2Zw/newcomer-get-know-teammates-pleased-good-looking-businesswoman-transparent-glasses-blue-collar-shirt.jpg"
@@ -73,7 +73,7 @@ const ClientReview = () => {
             />
           </div>
         </div>
-        <div className="border w-[370px] h-[370px] p-4">
+        <div className="border md:w-[370px] md:h-[370px] p-4">
           <img
             className="w-16 h-16 rounded-full"
             src="https://i.ibb.co/Bg8sG17/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background.jpg"
@@ -120,7 +120,7 @@ const ClientReview = () => {
             />
           </div>
         </div>
-        <div className="border w-[370px] h-[370px] p-4">
+        <div className="border md:w-[370px] md:h-[370px] p-4">
           <img
             className="w-16 h-16 rounded-full"
             src="https://i.ibb.co/yqkt9PK/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-we.jpg"

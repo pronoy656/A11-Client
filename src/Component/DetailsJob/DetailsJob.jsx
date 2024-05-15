@@ -74,12 +74,12 @@ const DetailsJob = () => {
       <h1 className="mt-11 text-3xl font-extrabold">Title: {subCategory}</h1>
       <h1 className="text-base font-medium mt-4">email: {email}</h1>
       <div className="border border-b-1 mt-8 mb-10"></div>
-      <div className="flex space-x-3">
-        <div className="w-2/3 border p-2">
+      <div className="md:flex space-x-3">
+        <div className="md:w-2/3 border p-2">
           <p className="text-xl font-bold mb-4">About This Job</p>
           <h1>{jobDescription}</h1>
         </div>
-        <div className="w-1/3 border p-2">
+        <div className="md:w-1/3 border p-2">
           <div className="flex gap-x-2 items-center">
             <div>
               <FaLocationDot />

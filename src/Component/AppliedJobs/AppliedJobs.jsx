@@ -12,8 +12,7 @@ const AppliedJobs = () => {
       .then((data) => setAppJobs(data));
   }, []);
   return (
-    <div>
-      <h1>This is applied jobs page{appJobs.length}</h1>
+    <div className="grid grid-cols-1 md:grid-cols-3">
       {appJobs.map((card) => (
         <AppliedCard key={card._id} card={card}></AppliedCard>
       ))}
