@@ -1,8 +1,9 @@
 # Swipe Career
-**Swipe Career**
+**Swipe Career:**
 This is a job related website.  Where a user can start from posting jobs to apply for jobs based on his preferences.
-Top Features of my website
-1.First of all user will login and register
+
+**Top Features of my website**
+**1.First of all user will login and register
 2.without login user can not access the private route.So if user can visit private route defenatley login
 3.in Add Job page user can add any job with their email and name.
 4.After adding he/she will see his own added job My jobs page.
@@ -14,7 +15,7 @@ Top Features of my website
 10.also user can apply any kind of job.(if he/she don't add the job)
 11.The user who adds the job cannot apply at this own time.(apply button will be disable)
 12.From the apply job page,the user can filter the job according to their own preferences.
-13.From the home page ,the user can select jobs in the form of tabs
+13.From the home page ,the user can select jobs in the form of tabs**
 
 Ok these are the main feature of my website
           **Thank you**
