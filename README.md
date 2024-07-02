@@ -1,7 +1,6 @@
-Web site Name:Swipe Career
-
-**My Selected category is assignment 003**
-
+# Swipe Career
+**Swipe Career**
+This is a job related website.  Where a user can start from posting jobs to apply for jobs based on his preferences.
 Top Features of my website
 1.First of all user will login and register
 2.without login user can not access the private route.So if user can visit private route defenatley login
@@ -18,5 +17,5 @@ Top Features of my website
 13.From the home page ,the user can select jobs in the form of tabs
 
 Ok these are the main feature of my website
+          **Thank you**
 
-        *********Thank you*************
