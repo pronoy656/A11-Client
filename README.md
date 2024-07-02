@@ -5,9 +5,7 @@ This is a job related website.  Where a user can start from posting jobs to appl
 **Top Features of my website**
 
 **1.First of all user will login and register
-
 2.without login user can not access the private route.So if user can visit private route defenatley login
-
 3.in Add Job page user can add any job with their email and name.
 4.After adding he/she will see his own added job My jobs page.
 5.All the data added by each user Can be see in all Art and Craft Items
@@ -21,5 +19,7 @@ This is a job related website.  Where a user can start from posting jobs to appl
 13.From the home page ,the user can select jobs in the form of tabs**
 
 Ok these are the main feature of my website
-          **Thank you**
+If any one wants to run this project locally then he/she has to written npm run dev and firebase deploy on client side terminal.On the other hand, nodemon index.js should be written on the server side terminal
+# Server side github link
+# https://github.com/pronoy656/A11-Server
 
