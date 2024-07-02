@@ -3,8 +3,11 @@
 This is a job related website.  Where a user can start from posting jobs to apply for jobs based on his preferences.
 
 **Top Features of my website**
+
 **1.First of all user will login and register
+
 2.without login user can not access the private route.So if user can visit private route defenatley login
+
 3.in Add Job page user can add any job with their email and name.
 4.After adding he/she will see his own added job My jobs page.
 5.All the data added by each user Can be see in all Art and Craft Items
